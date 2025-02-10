@@ -10,14 +10,11 @@ public class ListaFuncionario {
 
 
   public void adicionarFuncionario(Funcionario func){
-    System.out.println(func.nome);
     if (this.head == null) {
-      System.out.println("first node");
       this.head = new NodeLista();
       this.head.data = func;
 
     } else {
-      System.out.println("second node");
       NodeLista current = this.head;
 
       while(current.next != null){
@@ -26,10 +23,8 @@ public class ListaFuncionario {
 
       current.next = new NodeLista();
       current.next.data = func;
-      System.out.println("execution");
     }
   }
-
 
   public void removerFuncionario(String nome){
     if (this.listaVazia()){
@@ -83,5 +78,18 @@ public class ListaFuncionario {
       System.out.println("---------------------------");
     }
     
+  }
+
+  public ListaFuncionario agruparPorFuncao(String funcao){
+    ListaFuncionario novaLista = new ListaFuncionario();
+
+    NodeLista current = this.head;
+    while(current != null){
+      if (current.data.funcao == funcao){
+        novaLista.adicionarFuncionario(current.data);
+      }
+      current = current.next;
+    }
+    return novaLista;
   }
 }

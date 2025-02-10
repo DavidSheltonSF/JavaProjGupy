@@ -19,7 +19,7 @@ public class App {
         func3.nome =  "teste";
         func3.dataDeNascimento = "12/05/1990";
         func3.salario = 2284.38;
-        func3.funcao = "operador";
+        func3.funcao = "teste";
 
         ListaFuncionario funcionarios = new ListaFuncionario();
 
@@ -27,14 +27,18 @@ public class App {
         funcionarios.adicionarFuncionario((func2));
         funcionarios.adicionarFuncionario((func3));
 
-        funcionarios.printar();
+        //funcionarios.printar();
 
-        funcionarios.removerFuncionario("João");
+        // funcionarios.removerFuncionario("João");
 
-        funcionarios.printar();
+        // funcionarios.printar();
 
-        funcionarios.aumentarSalarios(0.1);
+        // funcionarios.aumentarSalarios(0.1);
 
-        funcionarios.printar();
+        // funcionarios.printar();
+
+        ListaFuncionario operadores = funcionarios.agruparPorFuncao("operador");
+
+        operadores.printar();
     }
 }
