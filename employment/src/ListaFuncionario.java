@@ -1,3 +1,5 @@
+import java.math.RoundingMode;
+
 public class ListaFuncionario {
   NodeLista head = null;
 
@@ -80,6 +82,7 @@ public class ListaFuncionario {
     
   }
 
+  // Não consegui compreender como utilizar o MAP
   public ListaFuncionario agruparPorFuncao(String funcao){
     ListaFuncionario novaLista = new ListaFuncionario();
 
@@ -91,5 +94,49 @@ public class ListaFuncionario {
       current = current.next;
     }
     return novaLista;
+  }
+
+  public void printarFuncMaisVelho(){
+    if(this.listaVazia()){
+      return;
+    }
+    NodeLista current = new NodeLista();
+    while(current.next != null){
+      current = current.next;
+    }
+  }
+
+  public Double totalSalarios(){
+    if(this.listaVazia()){
+      System.out.println("void");
+      return 0.0;
+    }
+    NodeLista current = new NodeLista();
+    current = this.head;
+    Double total = 0.0;
+    while(current != null){
+      total = total + current.data.salario;
+      current = current.next;
+    }
+    return total;
+  }
+
+  public void salariosMinimos(){
+    if(this.listaVazia()){
+      System.out.println("void");
+      return;
+    }
+    NodeLista current = new NodeLista();
+    current = this.head;
+    Double salarioMinmo = 1212.00;
+    System.out.println("======== Salários Mínimos ======== ");
+    while(current != null){
+      Double total = current.data.salario / salarioMinmo;
+
+      System.out.print(current.data.nome);
+      System.out.print(": ");
+      System.out.println(total);
+      current = current.next;
+    }
   }
 }
