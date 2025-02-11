@@ -1,7 +1,5 @@
-import java.math.RoundingMode;
-
 public class ListaFuncionario {
-  NodeLista head = null;
+  Node head = null;
 
   public Boolean listaVazia() {
     if (this.head == null){
@@ -13,17 +11,17 @@ public class ListaFuncionario {
 
   public void adicionarFuncionario(Funcionario func){
     if (this.head == null) {
-      this.head = new NodeLista();
+      this.head = new Node();
       this.head.data = func;
 
     } else {
-      NodeLista current = this.head;
+      Node current = this.head;
 
       while(current.next != null){
         current = current.next;
       }
 
-      current.next = new NodeLista();
+      current.next = new Node();
       current.next.data = func;
     }
   }
@@ -32,8 +30,8 @@ public class ListaFuncionario {
     if (this.listaVazia()){
       return;
     }
-    NodeLista current = this.head;
-    NodeLista ant = null;
+    Node current = this.head;
+    Node ant = null;
 
     while (current.next != null) {
       ant = current;
@@ -53,7 +51,7 @@ public class ListaFuncionario {
       return;
     }
     
-    NodeLista current = this.head;
+    Node current = this.head;
     while(current != null){
       Double salario = current.data.salario;
       Double acrescimo = percentual * salario;
@@ -69,7 +67,7 @@ public class ListaFuncionario {
       System.out.println("Lista Vazia");
     }
 
-    NodeLista current = this.head;
+    Node current = this.head;
 
     while(current != null){
       System.out.println(current.data.nome);
@@ -86,7 +84,7 @@ public class ListaFuncionario {
   public ListaFuncionario agruparPorFuncao(String funcao){
     ListaFuncionario novaLista = new ListaFuncionario();
 
-    NodeLista current = this.head;
+    Node current = this.head;
     while(current != null){
       if (current.data.funcao == funcao){
         novaLista.adicionarFuncionario(current.data);
@@ -100,7 +98,7 @@ public class ListaFuncionario {
     if(this.listaVazia()){
       return;
     }
-    NodeLista current = new NodeLista();
+    Node current = new Node();
     while(current.next != null){
       current = current.next;
     }
@@ -111,7 +109,7 @@ public class ListaFuncionario {
       System.out.println("void");
       return 0.0;
     }
-    NodeLista current = new NodeLista();
+    Node current = new Node();
     current = this.head;
     Double total = 0.0;
     while(current != null){
@@ -126,16 +124,17 @@ public class ListaFuncionario {
       System.out.println("void");
       return;
     }
-    NodeLista current = new NodeLista();
+    Node current = new Node();
     current = this.head;
     Double salarioMinmo = 1212.00;
-    System.out.println("======== Salários Mínimos ======== ");
+    System.out.println("======= Salários Mínimos =======");
     while(current != null){
       Double total = current.data.salario / salarioMinmo;
 
       System.out.print(current.data.nome);
       System.out.print(": ");
       System.out.println(total);
+      System.out.println("================================");
       current = current.next;
     }
   }

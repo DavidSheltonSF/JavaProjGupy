@@ -67,16 +67,20 @@ public class App {
         funcionarios.adicionarFuncionario((func1));
         funcionarios.adicionarFuncionario((func2));
         funcionarios.adicionarFuncionario((func3));
+        funcionarios.adicionarFuncionario((func4));
+        funcionarios.adicionarFuncionario((func5));
+        funcionarios.adicionarFuncionario((func6));
+        funcionarios.adicionarFuncionario((func7));
+        funcionarios.adicionarFuncionario((func8));
+        funcionarios.adicionarFuncionario((func9));
+        funcionarios.adicionarFuncionario((func10));
+        funcionarios.printar();
 
-        //funcionarios.printar();
+        funcionarios.removerFuncionario("João");
+        funcionarios.printar();
 
-        // funcionarios.removerFuncionario("João");
-
-        // funcionarios.printar();
-
-        // funcionarios.aumentarSalarios(0.1);
-
-        // funcionarios.printar();
+        funcionarios.aumentarSalarios(0.1);
+        funcionarios.printar();
 
         ListaFuncionario operadores = funcionarios.agruparPorFuncao("operador");
         operadores.printar();
