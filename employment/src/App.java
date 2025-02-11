@@ -1,6 +1,5 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
 
         Funcionario func1 = new Funcionario();
         Funcionario func2 = new Funcionario();
@@ -69,18 +68,17 @@ public class App {
         funcionarios.adicionarFuncionario((func2));
         funcionarios.adicionarFuncionario((func3));
 
-        funcionarios.printar();
+        //funcionarios.printar();
 
-        funcionarios.removerFuncionario("João");
+        // funcionarios.removerFuncionario("João");
 
-        funcionarios.printar();
+        // funcionarios.printar();
 
-        funcionarios.aumentarSalarios(0.1);
+        // funcionarios.aumentarSalarios(0.1);
 
-        funcionarios.printar();
+        // funcionarios.printar();
 
         ListaFuncionario operadores = funcionarios.agruparPorFuncao("operador");
-
         operadores.printar();
 
         System.out.println("Salário Total dos Funcionários");
